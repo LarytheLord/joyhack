@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoyHack - Where Coding Meets Community</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Existing Styles */
+        .gradient-text {
+            background: linear-gradient(45deg, #6366F1, #EC4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0F172A, #1E293B);
+        }
+
+        /* New Animation Styles */
+        #coming-soon {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0F172A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeOut 1s ease-in-out 4s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        #coming-soon h1 {
+            font-size: 6rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #6366F1, #EC4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Particle Animation */
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: particleMove 5s linear infinite;
+        }
+
+        @keyframes particleMove {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translateY(-1000px) translateX(500px); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-100">
+    <!-- Coming Soon Animation -->
+    <div id="coming-soon">
+        <!-- Particles -->
+        <div class="particle" style="left: 10%; top: 50%; width: 4px; height: 4px; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 70%; width: 3px; height: 3px; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; width: 2px; height: 2px; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 85%; top: 60%; width: 5px; height: 5px; animation-delay: 3s;"></div>
+
+        <h1>Coming Soon</h1>
+    </div>
+
+    <!-- Existing Content -->
+    <nav class="fixed w-full bg-gray-900/90 backdrop-blur z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold gradient-text">JoyHack</h1>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#clubs" class="hover:text-indigo-400">Clubs</a>
+                    <a href="#learn" class="hover:text-indigo-400">Learn</a>
+                    <a href="#events" class="hover:text-indigo-400">Events</a>
+                    <a href="#community" class="hover:text-indigo-400">Community</a>
+                </div>
+                <button class="px-6 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-700">Join Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                Where <span class="gradient-text">Coding</span> Meets 
+                <span class="gradient-text">Community</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                Join JoyHack, a global community of developers, to build amazing projects, learn together, and grow in a supportive environment.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button class="px-8 py-3 bg-indigo-600 rounded-lg hover:bg-indigo-700">Get Started</button>
+                <button class="px-8 py-3 border border-gray-600 rounded-lg hover:border-indigo-400">Explore Hackathons</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths -->
+    <section id="learn" class="py-16 bg-gray-800/50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Learn & Grow</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Beginner Card -->
+                <div class="glass-card p-6 rounded-xl hover-scale">
+                    <h3 class="text-xl font-bold mb-4">Beginner</h3>
+                    <p class="text-gray-400 mb-4">Web Development Fundamentals</p>
+                    <div class="text-sm text-gray-400 mb-4">
+                        <p>8 weeks • 12 modules</p>
+                        <p>2500+ JoyHackers enrolled</p>
+                    </div>
+                    <button class="w-full py-2 bg-indigo-600/50 rounded-lg hover:bg-indigo-600">Start Learning</button>
+                </div>
+                
+                <!-- Intermediate Card -->
+                <div class="glass-card p-6 rounded-xl hover-scale">
+                    <h3 class="text-xl font-bold mb-4">Intermediate</h3>
+                    <p class="text-gray-400 mb-4">Full Stack Development</p>
+                    <div class="text-sm text-gray-400 mb-4">
+                        <p>10 weeks • 15 modules</p>
+                        <p>2100+ JoyHackers enrolled</p>
+                    </div>
+                    <button class="w-full py-2 bg-indigo-600/50 rounded-lg hover:bg-indigo-600">Start Learning</button>
+                </div>
+
+                <!-- Advanced Card -->
+                <div class="glass-card p-6 rounded-xl hover-scale">
+                    <h3 class="text-xl font-bold mb-4">Advanced</h3>
+                    <p class="text-gray-400 mb-4">Advanced React Patterns</p>
+                    <div class="text-sm text-gray-400 mb-4">
+                        <p>6 weeks • 8 modules</p>
+                        <p>1800+ JoyHackers enrolled</p>
+                    </div>
+                    <button class="w-full py-2 bg-indigo-600/50 rounded-lg hover:bg-indigo-600">Start Learning</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Clubs -->
+    <section id="clubs" class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">JoyHack Clubs</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Web Dev Club -->
+                <div class="glass-card p-6 rounded-xl hover-scale">
+                    <h3 class="text-xl font-bold mb-4">Web Development Club</h3>
+                    <p class="text-gray-400 mb-4">A community of passionate web developers building the future of the web</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Node.js</span>
+                    </div>
+                    <button class="w-full py-2 bg-indigo-600/50 rounded-lg hover:bg-indigo-600">Join Club →</button>
+                </div>
+
+                <!-- AI/ML Club -->
+                <div class="glass-card p-6 rounded-xl hover-scale">
+                    <h3 class="text-xl font-bold mb-4">AI/ML Study Group</h3>
+                    <p class="text-gray-400 mb-4">Explore the fascinating world of artificial intelligence and machine learning</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">TensorFlow</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">PyTorch</span>
+                    </div>
+                    <button class="w-full py-2 bg-indigo-600/50 rounded-lg hover:bg-indigo-600">Join Club →</button>
+                </div>
+
+                <!-- Mobile Dev Club -->
+                <div class="glass-card p-6 rounded-xl hover-scale">
+                    <h3 class="text-xl font-bold mb-4">Mobile App Developers</h3>
+                    <p class="text-gray-400 mb-4">Creating innovative mobile applications for iOS and Android</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Flutter</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">React Native</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Swift</span>
+                    </div>
+                    <button class="w-full py-2 bg-indigo-600/50 rounded-lg hover:bg-indigo-600">Join Club →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Discussions -->
+    <section id="community" class="py-16 bg-gray-800/50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold gradient-text">Community Discussions</h2>
+                <button class="px-6 py-2 bg-indigo-600 rounded-lg">Start Discussion</button>
+            </div>
+            
+            <div class="glass-card p-6 rounded-xl">
+                <!-- Discussion 1 -->
+                <div class="py-4 border-b border-gray-700">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-medium">Sarah Chen</span>
+                            <span class="text-gray-400 text-sm">• 128 likes</span>
+                        </div>
+                        <span class="text-sm bg-indigo-600/20 px-3 py-1 rounded-full">React Performance</span>
+                    </div>
+                    <h3 class="text-xl font-medium">Best practices for React performance optimization</h3>
+                </div>
+
+                <!-- Discussion 2 -->
+                <div class="py-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-medium">Michael Johnson</span>
+                            <span class="text-gray-400 text-sm">• 95 likes</span>
+                        </div>
+                        <span class="text-sm bg-indigo-600/20 px-3 py-1 rounded-full">TypeScript Beginners</span>
+                    </div>
+                    <h3 class="text-xl font-medium">Getting started with TypeScript in 2024</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800/50 py-12 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-lg font-bold mb-4 gradient-text">JoyHack</h3>
+                <p class="text-gray-400">Join our community of developers and build amazing things together.</p>
+            </div>
+            
+            <div>
+                <h4 class="font-medium mb-4">Legal</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-indigo-400">Privacy</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Terms</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Security</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Cookies</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-medium mb-4">Resources</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-indigo-400">Blog</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Tutorials</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Showcase</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Support</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-medium mb-4">Company</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-indigo-400">About</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Careers</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Contact</a></li>
+                    <li><a href="#" class="hover:text-indigo-400">Partners</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+            <p>© 2025 JoyHack. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="#" class="hover:text-indigo-400 mx-2">Privacy Policy</a>
+                <a href="#" class="hover:text-indigo-400 mx-2">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add more particles dynamically
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = '100%';
+            particle.style.width = particle.style.height = Math.random() * 4 + 2 + 'px';
+            particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+            document.getElementById('coming-soon').appendChild(particle);
+
+            setTimeout(() => particle.remove(), 15000);
+        }
+
+        setInterval(createParticle, 300);
+    </script>
+</body>
+</html>
